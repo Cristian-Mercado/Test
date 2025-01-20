@@ -2,40 +2,35 @@ import tkinter as tk
 
 root = tk.Tk()
 
-root.geometry("800x500")
+root.geometry("900x600")
 root.title("Home page")
 
-label = tk.Label(root, text='How can I help you?', font =('Arial', 16))
+label = tk.Label(root, text='How can I help you?', font =('Arial', 20))
 label.pack(padx=10, pady=10)
 
-#textbox = tk.Text(root, height=3, font=("Arial", 16))
-#textbox.pack(padx=10, pady=10)
-
-#button = tk.Button(root, text="Click Me!", font=("Arial", 18))
-#button.pack(padx=10, pady=10)
-
 buttonframe = tk.Frame(root)
-buttonframe.columnconfigure(0, weight=1)
-buttonframe.columnconfigure(1, weight=1)
-buttonframe.columnconfigure(2, weight=1)
+buttonframe.pack(expand=True, fill="both", padx=10,pady=10)
+
+for i in range(5):
+  buttonframe.rowconfigure(i, weight=1)
+for j in range(5):
+  buttonframe.columnconfigure(j, weight=1)
 
 btn1 = tk.Button(buttonframe, text = "Academic Programs", font = ("Arial", 18))
-btn1.grid(row=0, column=0, sticky=tk.W+tk.E)
+btn1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
 
 btn2 = tk.Button(buttonframe, text = "Academic Calendar", font = ("Arial", 18))
-btn2.grid(row=0, column=1, sticky=tk.W+tk.E)
+btn2.grid(row=0, column=1, sticky="nsew", padx=10, pady=10)
 
-btn3 = tk.Button(buttonframe, text = "Events", font = ("Arial", 18))
-btn3.grid(row=0, column=2, sticky=tk.W+tk.E)
+btn3 = tk.Button(buttonframe, text = "Locations", font = ("Arial", 18))
+btn3.grid(row=0, column=2, sticky="nsew", padx=10, pady=10)
 
 btn4 = tk.Button(buttonframe, text = "General UNTD Info", font = ("Arial", 18))
-btn4.grid(row=1, column=0, sticky=tk.W+tk.E)
+btn4.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
 
-btn5 = tk.Button(buttonframe, text = "Locations", font = ("Arial", 18))
-btn5.grid(row=1, column=1, sticky=tk.W+tk.E)
+btn5 = tk.Button(buttonframe, text = "Events", font = ("Arial", 18))
+btn5.grid(row=1, column=1, sticky="nsew", padx=10, pady=10)
 
-#btn6 = tk.Button(buttonframe, text = "6", font = ("Arial", 18))
-#btn6.grid(row=1, column=2, sticky=tk.W+tk.E)
 
 buttonframe.pack(fill="x")
 
